@@ -1,0 +1,67 @@
+﻿<Window x:Class="Webcam_Blocker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Webcam_Blocker"
+        mc:Ignorable="d"
+        Background="DarkGray"
+        Title="WebCam and Microphone Blocking Application" Height="500" Width="800">
+    
+    <Grid Margin="10,0,0,2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="19*"/>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="307*"/>
+        </Grid.ColumnDefinitions>
+        <Slider x:Name="webcamSlider"  Margin="14,305,0,129" HorizontalAlignment="Left" 
+                Minimum="0" Maximum="1"  RenderTransformOrigin="0.924,0.649" Height="33" Width="100" Grid.Column="2" ValueChanged="webcamSlider_ValueChanged" Grid.ColumnSpan="2">
+            <Slider.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-180.08"/>
+                    <TranslateTransform X="-91.598" Y="-21.694"/>
+                </TransformGroup>
+            </Slider.RenderTransform>
+        </Slider>
+
+        <Slider x:Name="microphoneSlider"  Margin="251,295,0,139" 
+                Minimum="0" Maximum="1" HorizontalAlignment="Left"                
+                Height="33" Width="100" RenderTransformOrigin="0.487,0.502" 
+                Grid.ColumnSpan="2"
+                Grid.Column="2" ValueChanged="microphoneSlider_ValueChanged">
+            <Slider.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-179.817"/>
+                    <TranslateTransform X="3.122" Y="-0.259"/>
+                </TransformGroup>
+            </Slider.RenderTransform>
+        </Slider>
+        <Image x:Name="imgMicrophone" Source="/Images/MicrophoneIcon.png" Grid.Column="2" HorizontalAlignment="Left" Height="100" Margin="250,151,0,0" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2"/>
+        <Border BorderBrush="Black" BorderThickness="3" CornerRadius="15" 
+                HorizontalAlignment="Left" Height="100" Margin="10,151,0,0" 
+                VerticalAlignment="Top" Width="100" Grid.Column="2" Grid.ColumnSpan="2">
+            <Image x:Name="imgWebcam" Source="/Images/WebCamIcon.png" HorizontalAlignment="Left" Height="100" Margin="-1" VerticalAlignment="Top" Width="100"/>
+        </Border>
+
+
+        <Border BorderBrush="Black" BorderThickness="3" CornerRadius="15"
+                HorizontalAlignment="Left" VerticalAlignment="Top" Height="100" 
+                Width="100" Grid.Column="2" Margin="250,151,0,0" Grid.ColumnSpan="2"/>
+
+        <Label x:Name="lblWebcamProtection" Content="Your Webcam Is Protected" Foreground="Green" 
+        			HorizontalAlignment="Left" Margin="112,81,0,0" VerticalAlignment="Top" Height="34" Width="174" Grid.Column="1" Grid.ColumnSpan="3" />
+
+        <Label x:Name="lblMicrophoneProtection" Content="Your Microphone is Protected" Foreground="Green" 
+               Grid.Column="2" HorizontalAlignment="Left" Margin="220,81,0,0" VerticalAlignment="Top" Height="34" Width="206" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblWebcamBlock" Content="All Connections with Webcam Are Blocked" Grid.Column="1" 
+               HorizontalAlignment="Left" Margin="112,347,0,0" VerticalAlignment="Top" Height="27" Width="245" Grid.ColumnSpan="3"/>
+        <Label x:Name="lblMicrophoneBlock" Content="All Connections With Microphone Are Blocked" Grid.Column="2" 
+               HorizontalAlignment="Left" Margin="224,347,0,0" VerticalAlignment="Top" Height="27" Width="263" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</Window>
